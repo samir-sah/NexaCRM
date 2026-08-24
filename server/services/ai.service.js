@@ -4,6 +4,7 @@ import { ApiError } from "../utils/ApiError.js";
 let client = null;
 
 const getClient = () => {
+    const apiKey = process.env.GEMINI_API_KEY;
     if(!apiKey){
         throw new ApiError(
             503,
@@ -38,28 +39,6 @@ const generateJSON = async (prompt, schema) => {
     }
 };
 
-
-import { GoogleGenAI } from "@google/genai";
-import { ApiError } from "../utils/ApiError.js";
-
-let client = null;
-
-const getClient = () => {
-    if(!apiKey){
-        throw new ApiError(
-            503,
-            "Gemini API Key is not configured. Add GEMINI_API_KEY to the backend .env file."
-        );
-    }
-    if(!client) client = new GoogleGenAI({ apiKey });
-    return client;
-};
-
-const MODEL = () => process.env.GEMINI_MODEL || "gemini-3.6-flash";
-
-export const isAIConfigured = () => Boolean(process.env.GEMINI_API_KEY);
-
-
 const generateText = async (prompt, temperature = 0.7) => {
     const ai = getClient();
     try{
@@ -68,9 +47,9 @@ const generateText = async (prompt, temperature = 0.7) => {
             contents: prompt,
             config: { temperature }, 
         });
-        return JSON.parse(response.text);
+        return response.text;
     } catch(err){
-        console.error("Gemini JSON error:", err?.message || err);
+        console.error("Gemini text error:", err?.message || err);
         throw new ApiError(502, "AI request failed. Please try again in a moment.");
     }
 };
