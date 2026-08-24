@@ -77,8 +77,10 @@ export const updateProfile = asyncHandler(async (req, res) => {
     if (avatar !== undefined) user.avatar = avatar;
     if (password) user.password = password;
 
+    await user.save();
+
     res.json({
         success: true,
-        user: toClientUser(updatedUser),
+        user: toClientUser(user),
     });
 });

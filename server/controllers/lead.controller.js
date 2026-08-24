@@ -34,7 +34,7 @@ export const updateLead = asyncHandler(async (req,res) => {
 
     const lead = await Lead.findOneAndUpdate({_id: req.params.id, owner: req.user._id},
         updates,
-        {new:true, runValidators: true}
+        {returnDocument: 'after', runValidators: true}
     );
     if(!lead) throw new ApiError(404, "Lead not found");
     res.json({success: true, lead});
