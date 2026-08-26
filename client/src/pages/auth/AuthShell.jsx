@@ -1,4 +1,5 @@
-import { Sparkles, TrendingUp, Bot, ShieldCheck } from "lucide-react";
+import { TrendingUp, Bot, ShieldCheck } from "lucide-react";
+import { BrandMark } from "../../components/brand/BrandMark";
 
 /* Split-screen auth layout: marketing panel on the left, form on the right. */
 export function AuthShell({ children }) {
@@ -10,9 +11,7 @@ export function AuthShell({ children }) {
         <div className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-brand-600/50 blur-3xl" />
 
         <div className="relative flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
-            <Sparkles className="h-5 w-5" />
-          </div>
+          <BrandMark className="h-9 w-9 shrink-0" />
           <span className="font-display text-lg font-bold">NexaCRM</span>
         </div>
 
