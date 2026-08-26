@@ -1,5 +1,5 @@
-import { Wifi } from "lucide-react";
 import { Card, SectionHeading } from "../ui";
+import { BrandMark } from "../brand/BrandMark";
 import { currency } from "../../lib/format";
 
 /**
@@ -19,7 +19,7 @@ export function HeroCard({ value = 0, label = "Pipeline value" }) {
           <span className="font-display text-lg font-extrabold tracking-tight">
             NexaCRM
           </span>
-          <Wifi className="h-6 w-6 rotate-90 opacity-90" />
+          <BrandMark className="h-8 w-8 rounded-lg bg-white p-1" />
         </div>
 
         <p className="relative mt-6 text-sm text-white/70">{label}</p>

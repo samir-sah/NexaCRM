@@ -8,10 +8,10 @@ import {
   CalendarCheck,
   Settings,
   LogOut,
-  Sparkles,
 } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { useAuth } from "../../context/AuthContext";
+import { BrandMark } from "../brand/BrandMark";
 
 /* Primary navigation — icon + label rail, matching the reference sidebar. */
 const NAV = [
@@ -30,9 +30,7 @@ export function Sidebar({ onNavigate }) {
     <aside className="flex h-full w-64 flex-col bg-surface border-r border-line">
       {/* Brand */}
       <div className="flex items-center gap-2.5 px-6 py-6">
-        <div className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-          <Sparkles className="h-5 w-5" />
-        </div>
+        <BrandMark className="h-9 w-9 shrink-0" />
         <span className="font-display text-lg font-bold text-ink">NexaCRM</span>
       </div>
 

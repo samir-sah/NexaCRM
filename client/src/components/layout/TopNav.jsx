@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { Search, Bell, Menu, ChevronDown, User, LogOut, Sparkles } from "lucide-react";
+import { Search, Bell, Menu, ChevronDown, User, LogOut } from "lucide-react";
 import {
   Avatar,
   IconButton,
@@ -10,6 +10,7 @@ import {
 } from "../ui";
 import { useAuth } from "../../context/AuthContext";
 import { cn } from "../../lib/utils";
+import { BrandMark } from "../brand/BrandMark";
 
 /* Centered text links — a subset of the primary nav, rendered in a white pill
    exactly like the reference top bar. */
@@ -29,9 +30,7 @@ export function TopNav({ onMenuClick }) {
     <header className="flex items-center gap-3">
       {/* Brand */}
       <div className="flex items-center gap-2.5 pr-2">
-        <div className="brand-gradient flex h-9 w-9 items-center justify-center rounded-xl text-white">
-          <Sparkles className="h-5 w-5" />
-        </div>
+        <BrandMark className="h-9 w-9 shrink-0" />
         <span className="hidden font-display text-lg font-bold text-ink sm:block">
           NexaCRM
         </span>
