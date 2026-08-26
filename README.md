@@ -21,6 +21,12 @@ A full-stack Customer Relationship Management platform built with the **MERN sta
 - **Task Tracker** — Task management with priorities, due dates, and auto-completion timestamps
 - **Authentication** — JWT-based auth with registration, login, profile updates, and protected routes
 
+### Analytics
+- **Dashboard Overview** — Real-time stats: revenue won, pipeline value, total leads/contacts, open tasks, and conversion rate
+- **Pipeline Breakdown** — Lead count and value across every stage (New → Won/Lost)
+- **Monthly Trend** — 6-month rolling chart of new leads created and revenue won
+- **Recent Activity** — Latest 6 updated leads at a glance
+
 ### AI-Powered (Gemini)
 - **Lead Summary** — Generates executive summaries, risk scores (0–100), and next-best-action recommendations
 - **Email Drafting** — AI-composed sales emails with customizable tone and purpose
@@ -64,7 +70,8 @@ CRM/
 │   │   ├── contact.controller.js
 │   │   ├── note.controller.js
 │   │   ├── task.controller.js
-│   │   └── ai.controller.js
+│   │   ├── ai.controller.js
+│   │   └── analytics.controller.js
 │   ├── middleware/
 │   │   ├── auth.middleware.js  # JWT protect middleware
 │   │   └── error.middleware.js # Global error handler
@@ -80,7 +87,8 @@ CRM/
 │   │   ├── contact.routes.js
 │   │   ├── note.routes.js
 │   │   ├── task.routes.js
-│   │   └── ai.routes.js
+│   │   ├── ai.routes.js
+│   │   └── analytics.routes.js
 │   ├── services/
 │   │   └── ai.service.js      # Gemini AI integration
 │   ├── utils/
@@ -227,6 +235,12 @@ Authorization: Bearer <jwt_token>
 | `POST` | `/ai/generate-email` | Yes | Draft a sales email for a lead |
 | `POST` | `/ai/sales-insights` | Yes | Get pipeline health analysis & recommendations |
 
+### Analytics
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `GET` | `/analytics/overview` | Yes | Dashboard stats, pipeline breakdown, 6-month trend, and recent leads |
+
 ---
 
 ## 🛠️ Tech Stack
@@ -365,6 +379,7 @@ All **26 endpoints** have been tested against a live server with MongoDB Atlas.
  ✅ POST   /api/ai/lead-summary        200
  ✅ POST   /api/ai/generate-email      200
  ✅ POST   /api/ai/sales-insights      200
+ ✅ GET    /api/analytics/overview     200
 ```
 
 **Server logs:** Zero errors, zero deprecation warnings.
