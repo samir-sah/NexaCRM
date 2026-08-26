@@ -33,7 +33,7 @@ if(process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 //     Routes
 
 app.get("/api/health", (req,res)=>
-    res.json({success: true, status: "ok", service:"TTP CRM API"})
+    res.json({success: true, status: "ok", service:"NexaCRM API"})
 );
 
 app.use("/api/auth", authRoutes);
@@ -57,7 +57,7 @@ const start = async() => {
     try{
         await connectDB();
         app.listen(PORT, () =>
-        console.log(`CRM Api running on http://localhost:${PORT}`));
+        console.log(`NexaCRM API running on http://localhost:${PORT}`));
     } catch(err){
         console.error("Failed to start server", err.message);
         process.exit(1);

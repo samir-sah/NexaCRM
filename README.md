@@ -1,4 +1,4 @@
-# TTP CRM — AI-Powered Sales CRM
+# NexaCRM — AI-Powered Sales CRM
 
 A full-stack Customer Relationship Management platform built with the **MERN stack** and enhanced with **Google Gemini AI**. Manage leads, contacts, tasks, and notes — while leveraging AI to generate lead summaries, draft sales emails, and surface pipeline insights automatically.
 
@@ -37,7 +37,7 @@ A full-stack Customer Relationship Management platform built with the **MERN sta
 ## 🏗️ Architecture
 
 ```
-CRM/
+NexaCRM/
 ├── client/                   # React 19 + Vite frontend
 │   ├── src/
 │   │   ├── components/       # Reusable UI components
@@ -117,8 +117,8 @@ CRM/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/samir-sah/CRM-with-AI-integration-.git
-cd CRM-with-AI-integration-
+git clone <your-repository-url>
+cd NexaCRM
 ```
 
 ### 2. Backend Setup
